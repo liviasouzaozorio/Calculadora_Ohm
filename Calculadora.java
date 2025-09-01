@@ -203,7 +203,7 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            //Declaração das varíaveis para transformar em double
+            //declaração das varíaveis para transformar em double
         String vs = jTextField2.getText();
         String is = jTextField3.getText();
         String ps = jTextField1.getText();
@@ -213,19 +213,22 @@ public class Calculadora extends javax.swing.JFrame {
        double i = 0;
        double r = 0;
        double p = 0;
-        
+       //6 possiblidades no total
+        //situação 1
         if(vs.trim().isEmpty() && rs.trim().isEmpty() ){
+            //transformação para double
             p = Double.parseDouble(ps);
             i = Double.parseDouble(is);
             v = p / i;
             r = p / (i*i);
+            //alerta na tela para o usuário analisar o resultado
             JOptionPane.showMessageDialog(this, 
                     "Tensão: " + v + " V\n" +
                     "Resistência: " + r + " Ω\n" +
                     "Potência: " + p + " W\n" +
                     "Corrente: " + i + " A");   
         }
-        
+        //situação 2
          if(is.trim().isEmpty() && rs.trim().isEmpty() ){
             p = Double.parseDouble(ps);
             v = Double.parseDouble(vs);
@@ -237,6 +240,7 @@ public class Calculadora extends javax.swing.JFrame {
                     "Potência: " + p + " W\n" +
                     "Corrente: " + i + " A");   
         }
+         //situação 3
          if(is.trim().isEmpty() && ps.trim().isEmpty() ){
             v = Double.parseDouble(vs);
             r = Double.parseDouble(rs);
@@ -248,6 +252,7 @@ public class Calculadora extends javax.swing.JFrame {
                     "Potência: " + p + " W\n" +
                     "Corrente: " + i + " A");   
         }
+         //situação 4
            if(vs.trim().isEmpty() && ps.trim().isEmpty() ){
             i = Double.parseDouble(is);
             r = Double.parseDouble(rs);
@@ -259,6 +264,7 @@ public class Calculadora extends javax.swing.JFrame {
                     "Potência: " + p + " W\n" +
                     "Corrente: " + i + " A");   
         }
+           //situação 5
             if(ps.trim().isEmpty() && rs.trim().isEmpty() ){
             i = Double.parseDouble(is);
             v = Double.parseDouble(vs);
@@ -270,6 +276,7 @@ public class Calculadora extends javax.swing.JFrame {
                     "Potência: " + p + " W\n" +
                     "Corrente: " + i + " A");   
         }
+            //situação 6
             if(is.trim().isEmpty() && vs.trim().isEmpty() ){
             p = Double.parseDouble(ps);
             r = Double.parseDouble(rs);
